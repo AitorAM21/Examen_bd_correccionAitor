@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <%- include('../base_header.ejs') -%>
+
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+            <%- include('../base_menu.ejs') -%>
+        </div> <!-- /#admin-sidebar -->
+        <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
+            <div class="content-title m-x-auto">
+                <i class="fa fa-dashboard"></i> Ultimas Peliculas
+            </div>
+            <p class="display-4">
+
+                <% for (var i = 0; i < movies.length; i++) { %>
+
+                    <a class="card" href="/movies/<%= movies[i].id %>">
+                        <!-- Cover -->
+                        <div class="card__cover">
+                            <%= movies[i].poster_path %>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="card__content">
+                            <%= movies[i].id %>
+                            <%= movies[i].title %>
+                        </div>
+                    </a>
+                <% } %>
+
+
+            </p>
+        </div> <!-- /#admin-main-control -->
+    </div> <!-- /.row -->
+</div>
+
+
+</body>
+</html>

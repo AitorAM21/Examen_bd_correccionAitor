@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <%- include('../base_header.ejs') -%>
+
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+            <%- include('../base_menu.ejs') -%>
+        </div> <!-- /#admin-sidebar -->
+        <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
+            <div class="content-title m-x-auto">
+                <i class="fa fa-dashboard"></i> Detalle Pelicula
+            </div>
+            <p class="display-4">
+                <div class="card">
+                    <!-- Cover -->
+                    <div class="card__cover">
+                        <%= movie.poster_path %>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="card__content">
+                        <%= movie.id %>
+                        <%= movie.title %>
+                    </div>
+                </div>
+            </p>
+        </div> <!-- /#admin-main-control -->
+    </div> <!-- /.row -->
+</div>
+
+
+</body>
+</html>
+

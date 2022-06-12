@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Categoria</title>
+
+    <%- include('../base_header.ejs') -%>
+
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+            <%- include('../base_menu.ejs') -%>
+        </div> <!-- /#admin-sidebar -->
+        <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
+            <div class="content-title m-x-auto">
+                <i class="fa fa-dashboard"></i>
+
+                <%= category.name %>
+
+            </div>
+            <p class="display-4">
+                <!-- Container -->
+                <div class="accordion">
+                    <% for (var i = 0; i < movies.length; i++) { %>
+                    <!-- Each accordion item -->
+                    <a class="accordion__item" href="/movies/<%= movies[i].id%>">
+                        <!-- Heading -->
+                        <div class="accordion__header">
+                            <!-- The toggle icon -->
+                            <div class="accordion__toggle">...</div>
+
+                            <!-- The title -->
+                            <div class="accordion__title">
+                                <%= movies[i].title %>
+                            </div>
+                        </div>
+
+                        <!-- The content -->
+                        <div class="accordion__content">
+                            <%= movies[i].description %>
+                        </div>
+                    </a>
+                    <!-- Repeat other item -->
+                    <% } %>
+
+                </div>
+            </p>
+        </div> <!-- /#admin-main-control -->
+    </div> <!-- /.row -->
+</div>
+
+
+</body>
+</html>
+.- Ver las peliculas de una categoria -> /categories/:id
